@@ -18,7 +18,7 @@ function App() {
         <main className="App-main">
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            {/* <Route path="/calculator" element={<Calculator />} /> */}
+            <Route path="/calculator" element={<Calculator />} />
             <Route path="/notepad" element={<Notepad />} />
           </Routes>
         </main>
