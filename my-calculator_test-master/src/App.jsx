@@ -5,6 +5,12 @@ import Notepad from './Notepad'
 import LandingPage from './LandingPage'
 import './App.css'
 
+/**
+ * The main React component for the application, providing routing between the landing page, calculator, and notepad views.
+ * 
+ * Renders a header with navigation and sets up client-side routes for the main features of the app.
+ * @returns {JSX.Element} The root component containing the application's layout and routes.
+ */
 function App() {
   return (
     <div className="App">

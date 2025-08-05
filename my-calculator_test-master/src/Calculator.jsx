@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
 
+/**
+ * React component that renders a basic calculator with arithmetic operations, exponentiation, and square root functionality.
+ *
+ * Manages calculator state and user input, allowing users to perform chained calculations, clear the display, and handle decimal input. The UI includes buttons for digits, decimal point, arithmetic operators, power, square root, clear, and equals.
+ *
+ * @returns {JSX.Element} The calculator UI component.
+ */
 function Calculator() {
   const [display, setDisplay] = useState('0');
   const [firstOperand, setFirstOperand] = useState(null);
