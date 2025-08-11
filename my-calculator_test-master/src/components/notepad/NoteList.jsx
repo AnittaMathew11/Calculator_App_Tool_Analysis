@@ -1,6 +1,3 @@
-import React from 'react';
-import NoteItem from './NoteItem';
-
 function NoteList({ notes, searchTerm, handleEditNote, handleDeleteNote }) {
   const filteredNotes = notes.filter(note =>
     note.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -16,16 +13,15 @@ function NoteList({ notes, searchTerm, handleEditNote, handleDeleteNote }) {
         </p>
       ) : (
         filteredNotes.map(note => (
-          <NoteItem 
-            key={note.id} 
-            note={note} 
-            handleEditNote={handleEditNote} 
-            handleDeleteNote={handleDeleteNote} 
-          />
+          <div key={note.id}>
+            <h3>{note.title}</h3>
+            {/* Unsafe: Injecting raw HTML without sanitization */}
+            <div dangerouslySetInnerHTML={{ __html: note.content }} />
+            <button onClick={() => handleEditNote(note.id)}>Edit</button>
+            <button onClick={() => handleDeleteNote(note.id)}>Delete</button>
+          </div>
         ))
       )}
     </div>
   );
 }
-
-export default NoteList;
